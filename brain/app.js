@@ -36,5 +36,5 @@ app.get('/', function(req, res) {
 });
 
 app.post('/sound', function(req, res) {
-  require( path.join(dir.CONTROLLER, 'soundReceive.js') )(req, res);
+  require( path.join(dir.CONTROLLER, 'sound.js') )(req, res);
 });

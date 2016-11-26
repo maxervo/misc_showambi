@@ -16,8 +16,7 @@ var cons = require( path.join(dir.CONFIG, 'cons.js') );
 ========================================================================================================
 **/
 
-module.exports = function (req, res) {
-  module.exports = function (req, res) {
+module.exports = function (req, res, callback) {
 
   // create an incoming form object
   var form = new ext.formidable.IncomingForm();
@@ -37,6 +36,7 @@ module.exports = function (req, res) {
   // log any errors that occur
   form.on('error', function(err) {
     console.log('An error has occured: \n' + err);
+    callback(null);
   });
 
   // once all the files have been uploaded, send a response to the client
@@ -45,7 +45,13 @@ module.exports = function (req, res) {
   });
 
   // parse the incoming request containing the form data
-  form.parse(req);
-  roam.index=roam.index+1;  //incrementing the name of file
-};
+  form.parse(req, function(err, fields, files) {
+    if (err) {
+        console.log('Parse error ' + err);
+        return callback(err);  //considered not an error, considered as guest
+    }
+    roam.index=roam.index+1;  //incrementing the name of file
+    callback(cons.SOUNDNAME + String(roam.index-1));
+  });
+
 };
