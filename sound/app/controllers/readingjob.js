@@ -1,6 +1,7 @@
 var dir = require('../../config/dir.js');
 var cons = require('../../config/cons.js');
 var ext = require('../../config/ext.js');
+var unirest = require('unirest');
 
 module.exports = function() {
   var cron = require('cron');
@@ -24,7 +25,6 @@ function readFile() {
 function sendFileToBrain(data) {
 
   unirest.post(cons.BRAIN_URL)
-          .headers({'Accept': 'application/json'})
           .send(data)
           .end(function (response) {
           console.log(response.body);
