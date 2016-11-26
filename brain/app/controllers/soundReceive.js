@@ -8,6 +8,7 @@ var path = require('path');
 var dir = require('../../config/dir.js');
 var ext = require( path.join(dir.CONFIG, 'ext.js') );
 var roam = require( path.join(dir.CONFIG, 'roam.js') );
+var cons = require( path.join(dir.CONFIG, 'cons.js') );
 
 /**
 ========================================================================================================
@@ -25,12 +26,12 @@ module.exports = function (req, res) {
   form.multiples = true;
 
   //store all uploads in the /uploads directory
-  form.uploadDir = path.join(dir.ROOT, '/data/sound');
+  form.uploadDir = path.join(dir.ROOT, '/data/sound-received');
 
   // every time a file has been uploaded successfully,
   // rename it to it's orignal name
   form.on('file', function(field, file) {
-    ext.fs.rename(file.path, path.join(form.uploadDir, String(roam.index)));
+    ext.fs.rename(file.path, path.join(form.uploadDir, cons.SOUNDNAME + String(roam.index)));
   });
 
   // log any errors that occur
@@ -40,11 +41,11 @@ module.exports = function (req, res) {
 
   // once all the files have been uploaded, send a response to the client
   form.on('end', function() {
-    res.end(String(roam.openRoom));
+    res.end("Done");
   });
 
   // parse the incoming request containing the form data
   form.parse(req);
-  i=i+1;
+  roam.index=roam.index+1;  //incrementing the name of file
 };
 };

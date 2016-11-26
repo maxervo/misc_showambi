@@ -14,7 +14,9 @@ var ext = require( path.join(dir.CONFIG, 'ext.js') );
 **/
 
 exports.DOMAIN = "localhost";
-exports.PORT_DEV = 8080
-exports.PORT_INTEG = 8080
-exports.PORT_STAG = 8080
-exports.PORT_PROD = 80
+exports.PORT_DEV = 8001;
+exports.PORT_INTEG = 8080;
+exports.PORT_STAG = 8080;
+exports.PORT_PROD = 80;
+
+exports.SOUNDNAME = "sound";

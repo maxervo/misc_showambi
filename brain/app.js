@@ -18,6 +18,9 @@ var roam = require( path.join(dir.CONFIG, 'roam.js') );
 //Start app
 var app = ext.express();
 
+//Misc
+//TODO clean sound-received directory
+
 //Serve : Public Assets
 app.use('/public', ext.express.static('public'));  // serve public files
 app.use('/vendors', ext.express.static('vendors'));
@@ -33,5 +36,5 @@ app.get('/', function(req, res) {
 });
 
 app.post('/sound', function(req, res) {
-  require( path.join(dir.CONTROLLER, 'sound.js') )(req, res);
+  require( path.join(dir.CONTROLLER, 'soundReceive.js') )(req, res);
 });
