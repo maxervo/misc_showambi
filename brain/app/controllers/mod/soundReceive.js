@@ -5,7 +5,7 @@
 **/
 
 var path = require('path');
-var dir = require('../../config/dir.js');
+var dir = require('../../../config/dir.js');
 var ext = require( path.join(dir.CONFIG, 'ext.js') );
 var roam = require( path.join(dir.CONFIG, 'roam.js') );
 var cons = require( path.join(dir.CONFIG, 'cons.js') );

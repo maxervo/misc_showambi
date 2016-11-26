@@ -14,8 +14,7 @@ module.exports = function() {
 function readFile() {
 
     var filePath = dir.SOUND + cons.FILE_NAME;
-    console.log(filePath);
-
+    
     ext.fs.readFile(filePath, (err, data) => {
       if (err) throw err;
       sendFileToBrain(data);
@@ -25,6 +24,7 @@ function readFile() {
 function sendFileToBrain(data) {
 
   unirest.post(cons.BRAIN_URL)
+          .headers({'Content-Type': 'application/octet-stream'})
           .send(data)
           .end(function (response) {
           console.log(response.body);

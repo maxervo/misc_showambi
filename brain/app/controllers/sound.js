@@ -33,8 +33,8 @@ var lastfmAPI = function (info, callback) {
 
 module.exports = function (req, res) {
   soundReceive(req, res, function (filename) {
-    shazamAPI(filename, function(err, info) {
+    /*shazamAPI(filename, function(err, info) {
       res.send("ok");
-    });
+    });*/
   });
 };

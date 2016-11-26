@@ -21,5 +21,6 @@ module.exports = {
   fs: require('fs'),
   math: require('math'),
   os: require('os'),
-  unirest: require('unirest')
+  unirest: require('unirest'),
+  formidable: require('formidable')
 };
