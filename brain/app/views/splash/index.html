@@ -39,6 +39,9 @@ $.ajax({
         url: '/info',
         data: 'data',
         success: function (data) {
+	    var title = data.title;
+            var artist = data.artist;
+            $('.song-name').innerHTML(artist + " - " title);
             console.log(data);
         }
     })
