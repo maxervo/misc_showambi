@@ -36,6 +36,11 @@ app.get('/color', function(req, res) {
   require( path.join(dir.CONTROLLER, 'color.js') )(req, res);
 });
 
+//Manual routing
+app.get('/genre/all', function(req, res) {
+  require( path.join(dir.CONTROLLER, 'genreAll.js') )(req, res);
+});
+
 /*
 app.post('/sound', function(req, res) {
   require( path.join(dir.CONTROLLER, 'sound.js') )(req, res);
