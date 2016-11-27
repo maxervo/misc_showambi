@@ -7,6 +7,7 @@
 var path = require('path');
 var dir = require('../../config/dir.js');
 var ext = require( path.join(dir.CONFIG, 'ext.js') );
+var roam = require( path.join(dir.CONFIG, 'roam.js') );
 
 /**
 ========================================================================================================
@@ -15,5 +16,5 @@ var ext = require( path.join(dir.CONFIG, 'ext.js') );
 **/
 
 module.exports = function (req, res) {
-  res.send("{\'artist\': \'Sia\', \'title\': \'Cheap Thrills\'}");
+  res.send(roam.currentSong);
 };

@@ -8,6 +8,7 @@ var path = require('path');
 var dir = require('../../config/dir.js');
 var ext = require( path.join(dir.CONFIG, 'ext.js') );
 var cons = require( path.join(dir.CONFIG, 'cons.js') );
+var roam = require( path.join(dir.CONFIG, 'roam.js') );
 
 var soundReceive = require( path.join(dir.CONTROLLER, 'mod/soundReceive.js') );
 
@@ -18,6 +19,8 @@ var shazamAPI = function (data, callback) {
   .end(function (response) {
     //console.log(response.body.matches[0].metadata);
     return callback(null, response.body.matches[0].metadata);
+    console.log('in catch');
+
   });
 }
 
@@ -25,8 +28,10 @@ var lastfmAPI = function (info, callback) {
   var query = "track.getTopTags";
 
   //replacing " " by "+", because of lastfm api syntax
+  roam.currentSong = info;
   info.artist = info.artist.split(' ').join('+');
   info.title = info.title.split(' ').join('+');
+
 
   var getRequestUrl = cons.LASTFM_URL_BASE + "?method=" + query + "&api_key=" + cons.LASTFM_KEY + "&artist="+info.artist + "&track="+info.title + "&format=json";
   ext.unirest.get(encodeURI(getRequestUrl))

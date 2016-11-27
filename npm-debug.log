@@ -1,0 +1,72 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'bodyparser',
+1 verbose cli   '--save' ]
+2 info using npm@1.4.21
+3 info using node@v4.6.1
+4 verbose cache add [ 'bodyparser', null ]
+5 verbose cache add name=undefined spec="bodyparser" args=["bodyparser",null]
+6 verbose parsed url Url {
+6 verbose parsed url   protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'bodyparser',
+6 verbose parsed url   path: 'bodyparser',
+6 verbose parsed url   href: 'bodyparser' }
+7 silly lockFile 981361c8-bodyparser bodyparser
+8 verbose lock bodyparser /home/rstoke/.npm/981361c8-bodyparser.lock
+9 silly lockFile 981361c8-bodyparser bodyparser
+10 silly lockFile 981361c8-bodyparser bodyparser
+11 verbose addNamed [ 'bodyparser', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 6c35f799-bodyparser bodyparser@
+14 verbose lock bodyparser@ /home/rstoke/.npm/6c35f799-bodyparser.lock
+15 silly addNameRange { name: 'bodyparser', range: '*', hasData: false }
+16 verbose request where is /bodyparser
+17 verbose request registry https://registry.npmjs.org/
+18 verbose request id e9f140718c52ab7b
+19 verbose url raw /bodyparser
+20 verbose url resolving [ 'https://registry.npmjs.org/', './bodyparser' ]
+21 verbose url resolved https://registry.npmjs.org/bodyparser
+22 verbose request where is https://registry.npmjs.org/bodyparser
+23 info trying registry request attempt 1 at 12:50:28 PM
+24 http GET https://registry.npmjs.org/bodyparser
+25 http 404 https://registry.npmjs.org/bodyparser
+26 silly registry.get cb [ 404,
+26 silly registry.get   { 'content-type': 'application/json',
+26 silly registry.get     'cache-control': 'max-age=0',
+26 silly registry.get     'content-length': '2',
+26 silly registry.get     'accept-ranges': 'bytes',
+26 silly registry.get     date: 'Sun, 27 Nov 2016 11:50:29 GMT',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     age: '0',
+26 silly registry.get     connection: 'close',
+26 silly registry.get     'x-served-by': 'cache-lcy1140-LCY',
+26 silly registry.get     'x-cache': 'MISS',
+26 silly registry.get     'x-cache-hits': '0',
+26 silly registry.get     'x-timer': 'S1480247428.902220,VS0,VE637',
+26 silly registry.get     vary: 'Accept-Encoding' } ]
+27 silly lockFile 6c35f799-bodyparser bodyparser@
+28 silly lockFile 6c35f799-bodyparser bodyparser@
+29 error 404 Not Found
+29 error 404
+29 error 404 'bodyparser' is not in the npm registry.
+29 error 404 You should bug the author to publish it
+29 error 404
+29 error 404 Note that you can also install from a
+29 error 404 tarball, folder, or http url, or git url.
+30 error System Linux 3.16.0-4-amd64
+31 error command "/usr/bin/nodejs" "/usr/bin/npm" "install" "bodyparser" "--save"
+32 error cwd /home/rstoke/earth/workspace/professionnal/involved/Events/Hackkings/showambi
+33 error node -v v4.6.1
+34 error npm -v 1.4.21
+35 error code E404
+36 verbose exit [ 1, true ]
