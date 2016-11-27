@@ -17,6 +17,10 @@ var roam = require( path.join(dir.CONFIG, 'roam.js') );
 
 //Start app
 var app = ext.express();
+var myParser = require("body-parser");
+
+app.use(myParser.urlencoded({extended : true}));
+app.use(myParser.json());
 
 //Serve : Public Assets
 app.use('/public', ext.express.static('public'));  // serve public files
@@ -30,4 +34,9 @@ console.log('Server mode ' + server.MODE + ' listening port ' + server.PORT );
 //Manual routing
 app.get('/', function(req, res) {
   require( path.join(dir.CONTROLLER, 'home.js') )(req, res);
+});
+
+app.post('/color', function(req, res) {
+  console.log("im here - in the endpoint");
+  require( path.join(dir.CONTROLLER, 'colorcontroller.js')) (req, res);
 });
