@@ -22,5 +22,4 @@ module.exports = {
   math: require('math'),
   mysql: require('mysql'),
   os: require('os'),
-  bodyParser: require('bodyParser')
 };

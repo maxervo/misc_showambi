@@ -21,7 +21,7 @@ exports.PORT_STAG = 8080
 exports.PORT_PROD = 80
 exports.FILE_NAME = "record.wav"
 
-exports.BRAIN_URL = "http://localhost:8001/sound"
+exports.BRAIN_URL = "http://192.168.43.106:8001/sound"
 
 
 exports.DB_HOST = "localhost"
