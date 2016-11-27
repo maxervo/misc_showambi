@@ -14,7 +14,7 @@ module.exports = function() {
 function readFile() {
 
     var filePath = dir.SOUND + cons.FILE_NAME;
-    
+
     ext.fs.readFile(filePath, (err, data) => {
       if (err) throw err;
       sendFileToBrain(data);
