@@ -1,4 +1,4 @@
-module.exports = function (red,green,blue){
+module.exports = function (red,green,blue, callback){
         //Gamma correctie
         red = (red > 0.04045) ? Math.pow((red + 0.055) / (1.0 + 0.055), 2.4) : (red / 12.92);
         green = (green > 0.04045) ? Math.pow((green + 0.055) / (1.0 + 0.055), 2.4) : (green / 12.92);
@@ -11,12 +11,6 @@ module.exports = function (red,green,blue){
 
         var fx = X / (X + Y + Z);
         var fy = Y / (X + Y + Z);
-        if (isnan(fx)) {
-            fx = 0.0f;
-        }
-        if (isnan(fy)) {
-            fy = 0.0f;
-        }
 
-        return [fx.toPrecision(4),fy.toPrecision(4)];
+        return callback([fx, fy]);
 }

@@ -20,5 +20,6 @@ module.exports = {
   async: require('async'),
   fs: require('fs'),
   math: require('math'),
-  os: require('os')
+  os: require('os'),
+  unirest: require('unirest')
 };

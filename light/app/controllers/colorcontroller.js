@@ -1,19 +1,26 @@
 var dir = require('../../config/dir.js');
-var ext = require( path.join(dir.CONFIG, 'ext.js') );
+var ext = require('../../config/ext.js');
+var cons = require('../../config/cons.js');
 var rgbconverter = require('./rgbconverter.js');
 
-module.exports = function(request) {
+module.exports = function(req, res) {
 
-  rgbconverter(request.red, request.green, request.blue, (color) => {
+  var body = req.body;
+  res.sendStatus(200);
+
+  rgbconverter(body.red, body.green, body.blue, (color) => {
       changeColor(color);
   });
 
 }
 
 function changeColor(color) {
-  unirest.post('http://mockbin.com/request')
-         .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
-         .send()
+
+  var url = cons.HUE_IP + cons.HUE_API + "3" + cons.HUE_API_ACTION;
+
+  ext.unirest.put(url)
+         .headers({'Content-Type': 'application/json'})
+         .send("{\"xy\":[" + color + "]}")
          .end(function (response) {
            console.log(response.body);
   });
