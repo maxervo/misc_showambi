@@ -23,6 +23,10 @@ app.use('/public', ext.express.static('public'));  // serve public files
 app.use('/vendors', ext.express.static('vendors'));
 console.log('Public assets ready to be served.');
 
+//Database connection
+roam.con.connect();
+console.log('Connected to database');
+
 //Express.js server
 var httpServer = app.listen(server.PORT, "0.0.0.0");
 console.log('Server mode ' + server.MODE + ' listening port ' + server.PORT );
