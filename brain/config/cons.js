@@ -19,8 +19,15 @@ exports.PORT_INTEG = 8080;
 exports.PORT_STAG = 8080;
 exports.PORT_PROD = 80;
 
-exports.SOUNDNAME = "sound";
+exports.SOUNDNAME = "sound.wav";
 
 //API : Shazam
 exports.SHAZAM_HEADERS = {'X-Shazam-Api-Key': '03789B8E-A8CE-4229-A880-7FDE4C4FAEFC', 'Content-Type': 'application/octet-stream'};
 exports.SHAZAM_URL = "http://beta.amp.shazam.com/partner/recognise";
+
+//API : LastFm
+exports.LASTFM_KEY = "3bacfb085a94d221d66ce9426f65287d"
+exports.LASTFM_URL_BASE ="http://ws.audioscrobbler.com/2.0/"
+
+
+exports.LIGHT_URL = "http://localhost:8003/color";

@@ -30,7 +30,7 @@ module.exports = function (req, res, callback) {
   // every time a file has been uploaded successfully,
   // rename it to it's orignal name
   form.on('file', function(field, file) {
-    ext.fs.rename(file.path, path.join(form.uploadDir, cons.SOUNDNAME + String(roam.index)));
+    ext.fs.rename(file.path, path.join(form.uploadDir, cons.SOUNDNAME));
   });
 
   // log any errors that occur
@@ -50,8 +50,7 @@ module.exports = function (req, res, callback) {
         console.log('Parse error ' + err);
         return callback(err);  //considered not an error, considered as guest
     }
-    roam.index=roam.index+1;  //incrementing the name of file
-    callback(cons.SOUNDNAME + String(roam.index-1));
+    callback(cons.SOUNDNAME);
   });
 
 };
