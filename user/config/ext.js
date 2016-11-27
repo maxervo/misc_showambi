@@ -21,5 +21,6 @@ module.exports = {
   fs: require('fs'),
   math: require('math'),
   mysql: require('mysql'),
-  os: require('os')
+  os: require('os'),
+  bodyParser: require('bodyParser')
 };

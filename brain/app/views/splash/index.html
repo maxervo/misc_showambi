@@ -4,15 +4,15 @@
 <style>
 body{
     background-size: cover;
-    background-image: url("sky-night-space-trees.jpeg");
+    background-image: url("http://192.168.43.106:8001/public/images/night.jpeg");
 }
 
  p {
-	
+
         font-size: 16px; font-size: 6vw;
 	font-family: Century Gothic, sans-serif;
 	color: white
-} 
+}
  .container {
   height: 100%;
   width: 100%;
@@ -29,6 +29,20 @@ body{
 <div class="container">
 <p class="song-name">Some SUPER awesome song</p>
 </div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script>
+
+$.ajax({
+        type: "GET",
+        url: '/info',
+        data: 'data',
+        success: function (data) {
+            console.log(data);
+        }
+    })
+</script>
 </body>
 
 </html>

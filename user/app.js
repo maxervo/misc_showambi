@@ -23,6 +23,14 @@ app.use('/public', ext.express.static('public'));  // serve public files
 app.use('/vendors', ext.express.static('vendors'));
 console.log('Public assets ready to be served.');
 
+/**bodyParser.json(options)
+ * Parses the text as JSON and exposes the resulting object on req.body.
+ */
+app.use(ext.bodyParser.urlencoded({
+    extended: true
+}));
+app.use(ext.bodyParser.json());
+
 //Database connection
 roam.con.connect();
 console.log('Connected to database');
@@ -36,11 +44,10 @@ app.get('/color', function(req, res) {
   require( path.join(dir.CONTROLLER, 'color.js') )(req, res);
 });
 
-//Manual routing
 app.get('/genre/all', function(req, res) {
   require( path.join(dir.CONTROLLER, 'genreAll.js') )(req, res);
 });
 
 app.put('/genre', function(req, res) {
   require( path.join(dir.CONTROLLER, 'updateGenre.js') )(req, res);
-})
+});

@@ -61,12 +61,13 @@ var colorLight = function (jsonColor, callback) {
 var userColors = function(selectedTag, callback) {
   console.log(selectedTag);
 
-  var getRequestUrl = cons.USER_URL + "tag="+selectedTag;
+  var getRequestUrl = cons.USER_URL + "?tag="+selectedTag;
   ext.unirest.get(encodeURI(getRequestUrl))
   .end(function (respColor) {
     //console.log(require('util').inspect(response.body, { depth: null }));
     //return callback(null, "{'red': 55, 'green': 55, 'blue': 55}");
-    return callback(null, respColor);
+    console.log(respColor.body);
+    return callback(null, respColor.body);
   });
 }
 
