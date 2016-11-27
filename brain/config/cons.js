@@ -29,5 +29,5 @@ exports.SHAZAM_URL = "http://beta.amp.shazam.com/partner/recognise";
 exports.LASTFM_KEY = "3bacfb085a94d221d66ce9426f65287d"
 exports.LASTFM_URL_BASE ="http://ws.audioscrobbler.com/2.0/"
 
-
+exports.USER_URL = "http://localhost:8002/color";
 exports.LIGHT_URL = "http://localhost:8003/color";
