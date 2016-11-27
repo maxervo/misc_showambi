@@ -37,6 +37,9 @@ app.get('/', function(req, res) {
 });
 
 app.post('/color', function(req, res) {
-  console.log("im here - in the endpoint");
   require( path.join(dir.CONTROLLER, 'colorcontroller.js')) (req, res);
+});
+
+app.post('/brightness', function(req, res) {
+  require( path.join(dir.CONTROLLER, 'brightnesscontroller.js')) (req, res);
 });

@@ -1,26 +1,23 @@
 var dir = require('../../config/dir.js');
 var ext = require('../../config/ext.js');
 var cons = require('../../config/cons.js');
-var rgbconverter = require('./rgbconverter.js');
 
 module.exports = function(req, res) {
 
-  var body = req.body;
+  var brightness = req.query.value;
   res.sendStatus(200);
 
-  rgbconverter(body.red, body.green, body.blue, (color) => {
-      changeColor(color);
-  });
+  setBrightness(brightness);
 
 }
 
-function changeColor(color) {
+function setBrightness(brightness) {
 
   var url = cons.HUE_IP + cons.HUE_API + "3" + cons.HUE_API_ACTION;
 
   ext.unirest.put(url)
          .headers({'Content-Type': 'application/json'})
-         .send("{\"on\": true, \"xy\":[" + color + "]}")
+         .send("{\"on\": true, \"bri\":" + brightness + "}")
          .end(function (response) {
            console.log(response.body);
   });

@@ -60,7 +60,7 @@ var colorLight = function (jsonColor, callback) {
 
 var userColors = function(selectedTag, callback) {
   console.log(selectedTag);
-  return callback(null, "{'red': 55, 'green': 55, 'blue': 55}");
+  return callback(null, "{\"red\": 55, \"green\": 55, \"blue\": 55}");
 }
 
 var selectTags = function(rawTags, callback) {
